@@ -1,0 +1,181 @@
+---
+title: "Administração da Produção"
+subtitle: "Unidade 03: Planejamento e controle de materiais"
+author: 
+  - <br></br>Renata Oliveira
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["slides.css", "xaringan-themer.css"]
+    nature:
+      ratio: "16:9"
+      highlightLines: true
+      highlightStyle: solarized-light
+      countIncrementalSlides: false
+      slideNumberFormat: |
+         <div class="progress-bar-container">
+           <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+           </div>
+         </div>
+
+---
+
+```{r child = "setup.Rmd"}
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+```
+
+```{r xaringan-editable, echo=FALSE}
+xaringanExtra::use_editable(expires = 1)
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #90BE6D\"></i>",
+    error_text = "<i class=\"fa fa-times-circle\" style=\"color: #F94144\"></i>"
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+```
+
+```{r xaringan-fit-screen, echo=FALSE}
+xaringanExtra::use_fit_screen()
+```
+
+```{r xaringan-extra-styles, echo=FALSE}
+xaringanExtra::use_extra_styles(
+  hover_code_line = TRUE,         #<<
+  mute_unhighlighted_code = TRUE  #<<
+)
+```
+
+```{r xaringan-scribble, echo=FALSE}
+xaringanExtra::use_scribble()
+```
+
+
+class: middle, center, inverse
+
+
+# GESTÃO + PRODUÇÃO
+
+
+.large[
+Do que se trata?   
+Para que serve?   
+O precisamos saber?
+]
+---
+
+
+# Tipos de Capacidade
+
+- **Capacidade projetada:**  
+  É o nível máximo de produção que uma operação pode atingir sob condições ideais.  
+  <small>Slack et al. (2010)</small>
+
+- **Capacidade efetiva:**  
+  Considera restrições operacionais como manutenção, tempo de setup, etc.
+
+- **Capacidade utilizada:**  
+  Quantidade de produção realmente alcançada dentro de um período.
+
+---
+
+## Exemplos de Capacidade
+
+- **Projetada:** 1000 unidades/dia
+- **Efetiva:** 850 unidades/dia (ajustes, paradas)
+- **Utilizada:** 800 unidades/dia (demanda real)
+
+---
+
+# Dimensão Econômica
+
+> "A dimensão econômica da capacidade está relacionada ao volume que minimiza custos médios de operação."  
+> <small>Slack et al. (2010)</small>
+
+- **Economias de escala:**  
+  Aumentar a produção reduz o custo por unidade até certo ponto.
+
+- **Capacidade ótima:**  
+  Volume de produção que equilibra custos fixos e variáveis.
+
+---
+
+## Fatores que Afetam a Dimensão Econômica
+
+- Demanda do mercado
+- Investimento em equipamentos
+- Custos de operação e manutenção
+
+---
+
+# Lote Mínimo de Produção
+
+- **Definição:**  
+  Menor quantidade de produção que justifica economicamente a realização do lote.
+
+- **Cálculo:**  
+  Considera custos de preparação, fabricação e estoque.  
+  <small>Rodrigues (2017)</small>
+
+- **Importância:**  
+  Evita desperdícios e otimiza recursos produtivos.
+
+---
+
+## Exemplo de Cálculo do Lote Mínimo
+
+- Custo de setup: R$ 500
+- Custo unitário produção: R$ 10
+- Custo de estoque: R$ 2/unidade/mês
+
+---
+
+# Ponto de Equilíbrio
+
+- **Definição:**  
+  Volume de produção em que receitas igualam os custos totais (fixos + variáveis).
+
+- **Cálculo:**  
+  \[
+  Ponto\ de\ Equilíbrio = \frac{Custo\ Fixo}{Preço\ Unitário - Custo\ Variável}
+  \]
+  <small>Slack et al. (2010); Rodrigues (2017)</small>
+
+---
+
+## Exemplo de Ponto de Equilíbrio
+
+- Custo fixo: R$ 10.000
+- Preço unitário: R$ 50
+- Custo variável: R$ 30
+
+\[
+Ponto\ de\ Equilíbrio = \frac{10.000}{50 - 30} = 500\ unidades
+\]
+
+---
+
+# Referências
+
+- **Slack, N., Chambers, S., Johnston, R.** (2010). Administração da Produção.  
+- **Rodrigues, L. H.** (2017). Gestão da Produção.
+
+---
+
+# Obrigado!
+
+
+
+---
+class: center, middle
+
+.huge[
+**DÚVIDAS?**
+]
