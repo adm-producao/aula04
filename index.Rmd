@@ -1,6 +1,6 @@
 ---
 title: "Administração da Produção"
-subtitle: "Unidade 03: Planejamento da capacidade produtiva"
+subtitle: "Unidade 04: Planejamento da capacidade produtiva"
 author: 
   - <br></br>Renata Oliveira
 output:
