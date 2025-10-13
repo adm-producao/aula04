@@ -11,7 +11,7 @@
     <script src="libs/panelset/panelset.js"></script>
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view/tile-view.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"e4d01c7786d34d2aa2f190a5356b7054","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xae7a400543b48f282c8be0fd14368bd","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -37,7 +37,7 @@ class: center, middle, inverse, title-slide
 # Administração da Produção
 ]
 .subtitle[
-## Unidade 03: Planejamento e controle de materiais
+## Unidade 03: Planejamento da capacidade produtiva
 ]
 .author[
 ### <br></br>Renata Oliveira
@@ -71,119 +71,800 @@ layout: true
 
 
 
+## 1. Definições
 
-class: middle, center, inverse
+### Capacidade Produtiva
+
+**Definição:** Capacidade é o volume máximo potencial por unidade de tempo de atividade de agregação de valor que pode ser atingindo por uma unidade produtiva sob condições normais de operação [Corrêa, 2017].
+
+**Nível de capacidade:**
+
+- Máquinas ou funcionários individuais
+- Centros de produção (composto por máquinas e funcionários)
+- Planta
+
+---
+
+## 1. Definições
+
+### Formas de Medir a Capacidade
+
+- Pela quantidade de saídas
+- Pela quantidade de insumos
+
+### Determinação da Capacidade
+
+- Itens processados por unidade de tempo
+- Tempo disponível de produção: número de horas que podem ser usadas para produção
+
+---
+
+## 1. Definições
+
+### Tempo de Ciclo
+
+.pull-left[
+
+**Definição:** Tempo de ciclo é o tempo necessário para a execução do trabalho em um item.
 
 
-# GESTÃO + PRODUÇÃO
 
+**Exemplo:**
 
-.large[
-Do que se trata?   
-Para que serve?   
-O precisamos saber?
+Um centro de produção possui uma máquina que opera em um turno de 8 horas, cinco dias por semana.
+
+a) Disponibilidade de horas de produção na semana desta máquina
 ]
----
 
+.pull-right[
+b) Quantidade de itens que podem ser produzidos por semana - itens que necessitam de 30 minutos (tempo de ciclo)
 
-# Tipos de Capacidade
+É possível atender as seguintes demandas semanais?
 
-- **Capacidade projetada:**  
-  É o nível máximo de produção que uma operação pode atingir sob condições ideais.  
-  &lt;small&gt;Slack et al. (2010)&lt;/small&gt;
-
-- **Capacidade efetiva:**  
-  Considera restrições operacionais como manutenção, tempo de setup, etc.
-
-- **Capacidade utilizada:**  
-  Quantidade de produção realmente alcançada dentro de um período.
+- 10 unidades de um item 1, que tem tempo de ciclo igual a 30 minutos
+- 30 unidades de um item 2, que tem tempo de ciclo igual de 1 hora
+]
 
 ---
 
-## Exemplos de Capacidade
+## 2. Utilização e Eficiência
 
-- **Projetada:** 1000 unidades/dia
-- **Efetiva:** 850 unidades/dia (ajustes, paradas)
-- **Utilizada:** 800 unidades/dia (demanda real)
+### Capacidade Produtiva: Tipos
 
----
+**Capacidade instalada:** capacidade máxima de produção ininterrupta, sem que seja considerada nenhuma perda.
 
-# Dimensão Econômica
+**Capacidade total teórica (de projeto):** capacidade máxima de produção durante a jornada de trabalho disponível.
 
-&gt; "A dimensão econômica da capacidade está relacionada ao volume que minimiza custos médios de operação."  
-&gt; &lt;small&gt;Slack et al. (2010)&lt;/small&gt;
+**Capacidade efetiva:** capacidade teórica subtraindo-se as indisponibilidades.
 
-- **Economias de escala:**  
-  Aumentar a produção reduz o custo por unidade até certo ponto.
+**Capacidade para planejamento (capacidade real de produção):** capacidade de produção considerando todas as perdas.
 
-- **Capacidade ótima:**  
-  Volume de produção que equilibra custos fixos e variáveis.
 
 ---
 
-## Fatores que Afetam a Dimensão Econômica
+## 2. Utilização e Eficiência
 
-- Demanda do mercado
-- Investimento em equipamentos
-- Custos de operação e manutenção
+### Perdas de Capacidade de Produção
 
----
+**Exemplos de perdas de capacidade:**
 
-# Lote Mínimo de Produção
+- Paradas para manutenção
+- Perdas por retrabalho ou refugo de produtos
+- Tempo de preparação (setup)
+- Tempo em que o equipamento não está operando porque não há WIP (work in process - estoque em processo) para processar
+- Tempo ocioso sem operador: tempo em que o WIP está pronto, porém há nenhum operador disponível
 
-- **Definição:**  
-  Menor quantidade de produção que justifica economicamente a realização do lote.
-
-- **Cálculo:**  
-  Considera custos de preparação, fabricação e estoque.  
-  &lt;small&gt;Rodrigues (2017)&lt;/small&gt;
-
-- **Importância:**  
-  Evita desperdícios e otimiza recursos produtivos.
 
 ---
 
-## Exemplo de Cálculo do Lote Mínimo
+## 2. Utilização e Eficiência
 
-- Custo de setup: R$ 500
-- Custo unitário produção: R$ 10
-- Custo de estoque: R$ 2/unidade/mês
+### Utilização
 
----
+**Definição:** Utilização mede quanto da capacidade teórica tem sido feita disponível.
 
-# Ponto de Equilíbrio
+&gt; Utilização = Capacidade efetiva disponível (utilizada) / Capacidade teórica de projeto
 
-- **Definição:**  
-  Volume de produção em que receitas igualam os custos totais (fixos + variáveis).
+**Exemplo:** Em um processo de prestação de serviços que trabalhe 8 horas por dia. Dessas 8 horas teóricas o setor trabalhou, 6 horas. Determine sua utilização.
 
-- **Cálculo:**  
-  \[
-  Ponto\ de\ Equilíbrio = \frac{Custo\ Fixo}{Preço\ Unitário - Custo\ Variável}
-  \]
-  &lt;small&gt;Slack et al. (2010); Rodrigues (2017)&lt;/small&gt;
+Utilização = 6/8 = 0,750 = 75%
 
 ---
 
-## Exemplo de Ponto de Equilíbrio
+## 2. Utilização e Eficiência
 
-- Custo fixo: R$ 10.000
-- Preço unitário: R$ 50
-- Custo variável: R$ 30
+### Eficiência
 
-\[
-Ponto\ de\ Equilíbrio = \frac{10.000}{50 - 30} = 500\ unidades
-\]
+**Definição:** Eficiência reflete quão bem o período de disponibilidade do processo está sendo usado.
 
----
+&gt; Eficiência = volume de produção real / capacidade efetiva
+&gt; Eficiência = Saídas demonstradas / Saídas-padrão
 
-# Referências
+**Exemplo:** Em 6 horas trabalhadas, um funcionário bem treinado, trabalhando com eficiência-padrão, teria atendido, por exemplo, 24 clientes (4 clientes por hora). No entanto, o funcionário atendeu nas 6 horas apenas 21 clientes. Determine a sua eficiência.
 
-- **Slack, N., Chambers, S., Johnston, R.** (2010). Administração da Produção.  
-- **Rodrigues, L. H.** (2017). Gestão da Produção.
+Eficiência = 21/24 = 0,875 = 87,5%
 
 ---
 
-# Obrigado!
+## 2. Utilização e Eficiência
+
+### Capacidade Real
+
+**Definição:** Capacidade para planejamento ou capacidade real
+
+&gt; Cap. real = Cap. total teórica × Utilização × Eficiência
+
+**Exemplo:** Considere que um setor responsável por um processo de prestação de serviços trabalhe 8 horas por dia 5 dias por semana. Um funcionário do setor bem treinado, trabalhando com eficiência-padrão, teria atendido, em média, 3 clientes por hora. Considerando que a utilização dos funcionários no setor é igual 80% e sua eficiência é igual a 90%, determine a capacidade real semanal de dois funcionários.
+
+---
+
+## 2. Utilização e Eficiência
+
+### Exercício
+
+A demanda semanal estimada para um centro de trabalho é de 100 unidades. Cada funcionário é capaz de produzir 3 unidades por hora considerando a saída-padrão. Considerando que a taxa de utilização e de eficiência deste centro são ambas iguais a 50% e que cada funcionário trabalha 40 horas por semana, determine o número de funcionários que este centro de trabalho deve ter.
+
+&gt; Cap. real = Cap. total teórica × Utilização × Eficiência
+
+--
+
+- Utilização = 50%
+- Eficiência = 50%
+- Capacidade teórica = 120 unidades por semana por funcionário
+
+
+
+---
+
+## 2. Utilização e Eficiência
+
+### Exercício de Aplicação
+
+Um centro de trabalho tem 160 horas de trabalho disponível por mês e é capaz de produzir 120 unidades por hora de trabalho. No entanto, no mês anterior ele produziu mercadorias por 130 horas (preparação e ajustes da máquina, reuniões, manutenção de máquina), produzindo um total de 13000 unidades no mês (100 unidades por hora). Qual é a capacidade teórica mensal, a utilização e a eficiência do centro de trabalho?
+
+--
+
+- Capacidade teórica = 160 × 120 = 19200
+- Considerando capacidade em horas: Utilização = 130/160 = 0,8125
+- Considerando capacidade em quantidade de saídas: Utilização = 15600/19200 = 0,8125
+- Eficiência = 100/120 = 13000/15600 = 0,8333
+
+---
+
+## 2. Utilização e Eficiência
+
+### Exercício 2
+
+Um centro de trabalho tem 160 horas disponível por mês de trabalho e é capaz de produzir 120 unidades por hora de trabalho. No entanto, no mês anterior ele produziu mercadorias por 130 horas (preparação e ajustes da máquina, reuniões, manutenção de máquina), produzindo um total de 16900 unidades no mês (130 unidades por hora). Qual é a capacidade teórica mensal, a utilização e a eficiência do centro de trabalho?
+
+--
+
+- Capacidade teórica = 160 × 120 = 19200
+- Considerando a capacidade em horas: Utilização = 130/160 = 0,8125
+- Eficiência = 130/120 = 1,0833
+
+---
+
+## 2. Utilização e Eficiência
+
+### Exercício 3
+
+Considere os registros de ocorrências de um dado setor (em uma dada semana):
+
+.pull-left[
+| Registros | Horas |
+|-----------|-------|
+| Setup | 6h |
+| Inspeção | 2h |
+| Manutenção preventiva | 1h |
+| Manutenção corretiva | 3h |
+| Falta de material | 2h |
+]
+
+
+Considerando que este setor tem capacidade para produzir 200 peças por hora em dois turnos de oito horas, cinco dias por semana, definir:
+
+Os graus de utilização e de eficiência considerando que nesta semana foram produzidas 12.000 unidades e que na capacidade efetiva são consideradas apenas as perdas por indisponibilidades planejadas.
+
+
+---
+
+## 3. Eficácia Global de Equipamento (OEE)
+
+### Definição
+
+**Eficácia global de equipamento (OEE)** é um índice de eficiência usado para avaliar a eficácia de equipamentos de operações produtivas baseado em três aspectos: disponibilidade (D), desempenho (P) e qualidade (Q). O OEE é dado por:
+
+&gt; OEE = D × P × Q
+
+
+---
+
+
+## 3. Eficácia Global de Equipamento (OEE)
+
+**Exemplo:** Compute o OEE para uma máquina considerando um índice de disponibilidade D=0,8; índice de desempenho P=0,7 e índice de qualidade Q=0,9
+
+--
+
+OEE = D × P × Q = 0,8 × 0,7 × 0,9 = 0,504
+
+--
+
+### Avaliação do OEE
+
+- OEE &lt; 65%: inaceitável
+- 65% ≤ OEE &lt; 75%: Razoável
+- 75% ≤ OEE &lt; 85%: Aceitável
+- 85% ≤ OEE &lt; 95%: Bom
+- OEE &gt; 95%: Excelente
+
+
+---
+
+## 3. Eficácia Global de Equipamento (OEE)
+
+### Cálculo do OEE
+
+**Tempo de carregamento:** tempo disponível para produção menos todas as paradas planejadas.
+
+**Tempo operacional total:** tempo operacional total menos as perdas de disponibilidade. Exemplos de perdas de disponibilidades: (i) Tempo com setup e ajustes; (ii) Parada por quebra de equipamento.
+
+**Tempo operacional líquido:** tempo operacional disponível menos o tempo perdido por velocidade menor como, por exemplo, (i) Perdas de treinamento (pessoal novo), (ii) Pessoal com baixo rendimento; (iii) Atrasos relacionados à tecnologia.
+
+**Tempo operacional útil:** Tempo operacional líquido menos perdas de qualidade como, por exemplo, (i) Perdas de retrabalho (ii) Tratamento de reclamações, (iii) produto defeituosa.
+
+---
+
+## 3. Eficácia Global de Equipamento (OEE)
+
+### Índices do OEE
+
+**Índice de disponibilidade D:** a razão entre o tempo de carregamento e o tempo operacional total.
+
+**Índice de desempenho P:** razão entre o tempo operacional líquido e o tempo operacional total ou a razão entre a taxa de produção real e a taxa de produção padrão.
+
+**Índice de qualidade Q:** razão entre o tempo operacional útil e o tempo operacional líquido ou a taxa de itens conformes.
+
+&gt; OEE = D × P × Q
+
+
+---
+
+## 3. Eficácia Global de Equipamento (OEE)
+
+### Exemplo 1
+
+Determine os índices de disponibilidade (D), de desempenho (P), de qualidade (Q) e o OEE.
+
+- Tempo de carregamento: 35h (com 5h de perdas)
+- Tempo operacional total: 27h (com 8h de perdas)
+- Tempo operacional líquido: 23h (com 4h de perdas)
+- Tempo operacional útil: 21h (com 2h de perdas)
+
+
+---
+
+## 3. Eficácia Global de Equipamento (OEE)
+
+### Exemplo 2
+
+Em um período típico de sete dias, uma máquina particular tem capacidade para trabalhar por 150 horas (tempo de carregamento). O tempo médio com setups e ajustes é de 15 horas e o tempo médio de quebra é de 5 horas a cada sete dias. O tempo de ciclo de produção é igual a 30 minutos (0,5 hora) e durante o período em que a máquina está disponível foram produzidas 234 peças. Subsequentemente, 3% das peças processadas pela máquina mostram algum tipo de defeito. Determine o OEE desta máquina.
+
+--
+
+- D = 130/150 = 0,86
+- P = (0,5 × 234)/(130) = 234/(2 × 130) = 0,9
+- Q = 0,97
+- OEE = D × P × Q = 0,86 × 0,9 × 0,97 = 0,75 (OEE aceitável)
+
+---
+
+## 4. Decisões Envolvendo a Gestão da Capacidade
+
+### Decisões por Horizonte de Tempo
+
+**Longo prazo:**
+
+- Determinação do nível global de capacidade no longo prazo
+- Determinação de padrões de decisões para alteração dos níveis globais de capacidade
+
+**Médio prazo:**
+
+- Produção nivelada ou acompanhar a demanda com a produção
+- Composto de funcionários próprios e de terceiros usar para atender a flutuação de demanda
+
+---
+
+## 4. Decisões Envolvendo a Gestão da Capacidade
+
+### Decisões por Horizonte de Tempo
+
+**Curto prazo:**
+
+- Alocação de recursos a tarefas
+- Acomodação das flutuações de demanda no curtíssimo prazo
+
+
+---
+
+## 4. Decisões Envolvendo a Gestão da Capacidade
+
+### Decisões sobre Capacidade
+
+**Decisões sobre capacidade** , em geral, envolvem:
+
+1. Avaliação da capacidade existente
+2. Previsão de necessidades futuras de capacidade
+3. Identificação de diferentes formas de alterar a capacidade a curto, médio e longo prazo
+4. Identificação de diferentes formas de alterar a demanda
+5. Avaliação econômica, operacional e tecnológica de alternativas de alterar a capacidade
+6. Seleção de alternativas para a obtenção de capacidade adicional
+
+
+---
+
+## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+
+### Ponto de Equilíbrio
+
+Na análise do ponto de equilíbrio, calcula-se o **nível de produção** a partir do qual a planta ou unidade operação **começa a dar lucro**, ou seja, o ponto a partir do qual a **receita supera os custos** [Lustosa et al., 2008].
+
+---
+
+## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+
+
+### Definições
+
+.pull-left[
+**Receita ou faturamento (R):**
+
+- Qv: quantidade vendida
+- p: preço unitário de venda
+
+`$$R = Qv × p$$`
+
+]
+
+.pull-right[
+**Notação:**
+
+Cf: custo fixo que independe da quantidade produzida   
+Qp: quantidade produzida   
+Cu: custo unitário ou custo marginal (custo para se fabricar uma unidade do produto)   
+CT: Custo total
+
+`$$CT = Cf + Qp × Cu$$`
+]
+
+---
+
+## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+
+
+### Cálculo do Ponto de Equilíbrio
+
+O ponto de equilíbrio pode ser encontrado igualando-se a receita ao custo total [Lustosa et al., 2008].
+
+`$$R = CT$$`
+
+Seja Q* a quantidade de equilíbrio. Assumindo que existe é possível vender uma quantidade Q*, se R = CT, então:
+
+`$$Q* × p = Cf + (Q* × Cu)$$`
+
+---
+
+## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+
+### Cálculo do Ponto de Equilíbrio
+
+O ponto de equilíbrio pode ser dado por:
+
+`$$Q* = Cf / (p - Cu)$$`
+Em outras palavras, 
+
+Q* = custo fixo / (preço unitário - custo unitário)
+
+
+---
+
+## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+
+### Exemplo 1
+
+**Enunciado:** Um restaurante que tem um custo fixo mensal a ser desembolsado no início de cada mês de R\$20.000,00 (e não tem outros custos fixos). Cada refeição tem um custo unitário médio de R\$5,00. Esse valor é constante e independe da quantidade produzida, para a faixa de produção considerada. O preço médio estimado para a venda de cada refeição tem o valor de R$7,00. Determine a quantidade de equilíbrio.
+
+---
+
+## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+
+### Exemplo 2
+
+**Enunciado:** Um restaurante tem um custo de instalação de R$80.000,00 (e não teria outros custos fixos). Cada refeição terá um custo médio de R$4,00. Esse valor é constante e independe da quantidade produzida, para a faixa de produção considerada. O preço estimado para a venda de cada refeição é também homogêneo e tem o valor de R$8,00. Considere a hipótese de que o restaurante operará com uma taxa de demanda igual à sua capacidade operacional (200 refeições/dia). Determine a partir de quanto tempo o negócio passa a ser lucrativo?
+
+---
+
+## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+
+
+### Método do Ponto de Equilíbrio para Comparação
+
+**Comparação entre custos fixos e variáveis:**
+
+- É útil quando se tem informação de custos varáveis e fixos
+- Determina as faixas de volume em que cada local é melhor
+- Identificar as interseções que delimitam as faixas de volume para cada local
+- Basta identificar qual é o volume (Q) em que os custos são iguais
+
+---
+
+## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+
+
+### Método do Ponto de Equilíbrio para Comparação
+
+**Exemplo:** Serão avaliados os locais A e B para indústria de bebidas. Determine as faixas de volume em que cada local é melhor.
+
+| Custos | Cidade A | Cidade B |
+| --- | --- | --- |
+| Custo fixo mensal | R$1.000 | R$ 2.000 |
+| Custo variável por unidade | R$ 100 | R$ 50 |
+
+
+---
+
+## 6. Plano Agregado de Produção
+
+### Definição
+
+**Planejamento agregado de produção** é um plano de produção que visa compatibilizar os recursos produtivos da empresa com a demanda agregada, no médio prazo [Martins and Laugeni, 2009]. Conforme afirma Martins and Laugeni [2009], duas estratégias podem ser adotadas e combinadas: 
+
+(i) adequar os recursos necessários para atender a demanda ou   
+(ii) atuar na demanda para adequá-la aos recursos produtivos disponíveis.
+
+---
+
+## 6. Plano Agregado de Produção
+
+### Agregação da Demanda: Lei dos Grandes Números
+
+**Previsões agregadas:** Previsões agregadas são muito mais precisas, percentualmente, que a previsão desagregada do mesmo fenômeno.
+
+| Produto | Previsão | Real | Erro |
+| --- | --- | --- | --- |
+| BM | 15.000 | 17.000 | 2.000 |
+| CD | 9.000 | 7.500 | -1.500 |
+| QT | 12.000 | 13.000 | 1.000 |
+| HB | 25.000 | 20.000 | -5.000 |
+| MC | 8.000 | 13.000 | +5.000 |
+| Total | 69.000 | 70.500 | 1.500 |
+
+---
+
+## 6. Plano Agregado de Produção
+
+### Agregação e desagregação de demanda
+
+| Mês     | 1   | 2   | 3   | 4    | 5   | 6   | 7   | 8   |
+|---------|-----|-----|-----|------|-----|-----|-----|-----|
+| Colchões | 900 | 950 | 980 | 1000 | 980 | 980 | 960 | 960 |
+
+&lt;hr&gt;
+
+| Semana | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|--------|---|---|---|---|---|---|---|---|
+| Modelo 317 | 200 |  ||400 | | 200 |  100 | |
+| Modelo 538 | | 100 | 100 | | 150 | | 100 | |
+| Modelo 749 | | | 100 | | |200 | | 200 | |
+
+---
+
+## 6. Plano Agregado de Produção
+
+
+### Rotina para Análise da Capacidade de Produção
+
+Uma rotina que pode ser seguida para a análise da capacidade de produção é apresentada a seguir:
+
+1. Identificar os grupos de recursos a serem incluídos na análise
+2. Obter o padrão de consumo (horas/unidade) de cada família incluída no plano para cada grupo de recursos
+3. Multiplicar o padrão de consumo de cada família para cada grupo de recursos pela quantidade de produção própria prevista no plano para cada família
+4. Consolidar as necessidades de capacidade para cada grupo de recursos
+
+
+---
+
+## 6. Plano Agregado de Produção
+
+### Exemplo de Agregação
+
+Família de aparelhos de ar-condicionado constituída por aparelhos pequenos, médios e grandes. Consumo de recursos por aparelho:
+
+- Médio: cerca de 20% mais que um pequeno (1,2 pequeno)
+- Grande: cerca de 30% mais que um pequeno (1,3 pequeno)
+
+Medida agregada: "aparelhos pequenos equivalentes".
+
+Demanda de aparelhos para junho e julho:
+
+- Pequenos: 1.000 unidades e 1.200
+- Médios: 500 e 700
+- Grandes: 200 e 100
+
+Qual será a demanda agregada para junho e julho em termos de "aparelhos pequenos equivalentes"?
+
+
+| Períodos | Aparelhos |  |  | Demanda |
+|----------|-----------|------------|-----------|-----------|
+|          | Pequeno   | Médio      | Grande    | Agregada  |
+| Junho    | 1000      | 600        | 260       | 1860      |
+| Julho    | 1200      | 840        | 130       | 2170      |
+
+
+---
+
+## 6. Plano Agregado de Produção
+
+### Exemplo 2 de Agregação
+
+Uma fábrica de eletrodomésticos tem uma família de aparelhos de ar-condicionado constituída por aparelhos pequenos, médios e grandes. Se aparelhos pequenos, médios e grandes consomem, respectivamente, cerca de 10 minutos, 12 minutos e 15 minutos de um recurso crítico. Suponhamos que, em junho, a demanda de aparelhos pequenos seja de 1.000 unidades, de médios, 500, e de grandes, 200, e em julho respectivamente de 1.200, 700 e 100. Qual será a demanda agregada para junho e julho em termos de quantidade de horas de produção neste recurso crítico?
+
+| Períodos | Aparelhos | | | Demanda |
+| --- | --- | --- | --- | --- |
+| | Pequeno | Médio | Grande | Agregada |
+| Junho | 166,67 | 100 | 50 | 316,67 |
+| Julho | 200 | 140 | 25 | 365 |
+
+---
+
+## 6. Plano Agregado de Produção
+
+### Informações Necessárias
+
+Há uma série de informações necessárias para a elaboração de um plano de produção:
+
+**Recursos:** Equipamentos, instalações, força de trabalho, taxa de produção.
+
+**Previsão da demanda:** Demanda prevista para as famílias de itens.
+
+**Políticas alternativas:** Sub-contratações, contração de novos funcionários, contratos temporários, turnos extras, postergar a produção, estoques, etc.
+
+**Dados de custos:** Produção normal, armazenagem, sub-contratações, turno extra, etc.
+
+---
+
+## 6. Plano Agregado de Produção
+
+
+### Técnicas para Elaboração do Plano
+
+Várias técnicas podem ser utilizadas para auxiliar na elaboração de um plano de produção. Algumas delas procuram soluções otimizadas, outras aproveitam-se da experiência e do bom senso dos planejadores.
+
+**Técnicas informais de tentativa e erro:** empregam tabelas e gráficos para visualizar as situações planejadas e decidir pela mais viável.
+
+**Técnicas de pesquisa operacional:** empregam modelos matemáticos (programação linear, programação por objetivos, simulação, algoritmos genéticos, etc.) para buscar a melhor alternativa.
+
+---
+
+## 6. Plano Agregado de Produção
+
+### Políticas de Produção
+
+**Tentativa e erro: análise das seguintes alternativas:**
+
+1. Acompanhar a demanda
+2. Manter uma produção nivelada
+3. Manter um nivelamento por blocos
+
+---
+
+## 6. Plano Agregado de Produção
+
+### Exemplo Prático: Plano de Produção
+
+Desenvolver um plano de produção de uma família de produtos, para os próximos dois anos com períodos trimestrais.
+
+
+| Periodo | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|---------|---|---|---|---|---|---|---|---|
+| Prev. Dem. | 200 | 200 | 200 | 300 | 400 | 300 | 200 | 200 |
+
+---
+
+## 6. Plano Agregado de Produção
+
+**Dados de custos:**
+
+- Custo unitário de estoque por período: R$2
+- Custo unitário de produção (normal): R$4 (Produção em turno normal deve ser estável)
+- Custo unitário de produção (extra): R$6 (Limitado a 50 unidades)
+- Custo unitário de subcontração: R$10
+- Custo unitário de atraso (por trimestre): R$12
+
+---
+
+## 6. Plano Agregado de Produção
+
+### Alternativa 1: Produção Nivelada
+
+Na primeira alternativa a ser analisada, vamos supor que a estratégia adotada seja de manter a capacidade produtiva constante de 250 unidades (2000/8 = 250) por trimestre, e utilizar os estoques para absorver as variações da demanda. Nesta primeira alternativa de plano vamos admitir atrasos e transferências de entregas para os períodos seguintes.
+
+| Periodo | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | Total | Custo unit. | Custo |
+|---------|---|---|---|---|---|---|---|---|-------|------------|-------|
+| Prev. Dem. | 200 | 200 | 200 | 300 | 400 | 300 | 200 | 200 | 2000 | | |
+| Turno normal | 250 | 250 | 250 | 250 | 250 | 250 | 250 | 250 | 2000 | 4 | 8.000 |
+| Turno Extra | | | | | | | | | | 6 | 0 |
+| Subcontratação | | | | | | | | | | 10 | 0 |
+| Estoque final | 50 | 100 | 150 | 100 | 0 | 0 | 0 | 0 | 400 | 2 | 800 |
+| Atraso | | | | | 50 | 100 | 50 | | 200 | 12 | 2.400 |
+| | | | | | | | | | | | 11.200 |
+
+
+
+---
+
+## 6. Plano Agregado de Produção
+
+
+### Alternativa 2: Nivelamento por Blocos
+
+Na segunda alternativa será mantido um nivelamento por blocos de dois trimestres: produção normal de 200 unidades e incremento na demanda através de turnos extras de até 50 unidades por trimestres e restante sub-contratado de terceiros.
+
+| Periodo | 1 |2 | 3 | 4 | 5 | 6 | 7 | 8 | Total | Custo unit. | Custo |
+|---------|---|---|---|---|---|---|---|---|-------|------------|-------|
+| Prev. Dem. | 200 | 200 | 200 | 300 | 400 | 300 | 200 | 200 | 2000 | | |
+| Turno normal | 200 | 200 | 200 | 200 | 200 | 200 | 200 | 200 | 1600 | 4 | 6400 |
+| Turno Extra | | | | 50 | 50 | 50 | | | 150 | 6 | 900 |
+| Subcontratação | | | | 50 | 150 | 50 | | | 250 | 10 | 2500 |
+| Estoque final | | | | | | | | | | 2 | |
+| Atraso | | | | | | | | | | 12 | |
+| | | | | | | | | | | | 9800 |
+
+---
+
+## 6. Plano Agregado de Produção
+
+### Alternativa 3: Acompanhar a Demanda
+
+Na terceira alternativa vamos acompanhar a demanda: produção normal de 200 unidades e incremento na demanda através de turnos extras de até 50 unidades por trimestres e restante sub-contratado de terceiros.
+
+
+| Periodo | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | Total | Custo unit. | Custo |
+|---------|---|---|---|---|---|---|---|---|-------|------------|-------|
+| Prev. Dem. | 200 | 200 | 200 | 300 | 400 | 300 | 200 | 200 | 2000 | | |
+| Turno normal | 200 | 200 | 200 | 200 | 200 | 200 | 200 | 200 | 1600 | 4 | 6400 |
+| Turno Extra | | | | 50 | 50 | 50 | | | 150 | 6 | 900 |
+| Subcontratação | | | | 50 | 150 | 50 | | | 250 | 10 | 2500 |
+| Estoque final | | | | | | | | | | 2 | |
+| Atraso | | | | | | | | | | 12 | |
+| | | | | | | | | | | | 9800 |
+
+
+---
+
+## 6. Plano Agregado de Produção
+
+
+### Exemplo Adicional
+
+O planejamento agregado da produção para uma família de bebidas é feito anualmente com base na demanda de horas de produção.
+
+| Trimestre | 1 | 2 | 3 | 4 | Total |
+|-----------|---|---|---|---|-------|
+| Demanda | 200 | 300 | 300 | 200 | 1000 |
+
+
+---
+
+## 6. Plano Agregado de Produção
+
+### Comparação de Planos Agregados
+
+**Plano 1:**
+
+| Trimestre | 1 | 2 | 3 | 4 | Total | Custo | Custo |
+|-----------|---|---|---|---|-------|-------|-------|
+| Demanda | 200 | 300 | 300 | 200 | 1000 | | |
+| Turno normal | 250 | 250 | 250 | 250 | 1000 | 4 | 4000 |
+| Turno Extra | | | | | | 6 | |
+| Subcont. | | | | | | 8 | |
+| Estoque final | 50 | | | | 50 | 4 | 200 |
+| Atraso | | | 50 | | 50 | 9 | 450 |
+
+.
+**Plano 2:**
+
+| Trimestre | 1 | 2 | 3 | 4 | Total | Custo | Custo |
+|-----------|---|---|---|---|-------|-------|-------|
+| Demanda | 200 | 300 | 300 | 200 | 1000 | | |
+| Turno normal | 200 | 200 | 200 | 200 | 800 | 4 | 3200 |
+| Turno Extra | | 50 | 50 | | 100 | 6 | 600 |
+| Subcont. | | 50 | 50 | | 100 | 8 | 800 |
+| Estoque final | | | | | | 3 | |
+| Atraso | | | | | | 8 | |
+
+
+---
+
+## 6. Plano Agregado de Produção
+
+### Exercício Integrador
+
+| Mês | Jun | Jul | Ago | Set | Out | Nov |
+|-----|-----|-----|-----|-----|-----|-----|
+| Demanda prevista | 2000 | 2800 | 3600 | 3600 | 4000 | 3200 |
+
+
+Considere também que cada produto da família em análise consuma (tempo-padrão) 3 minutos do recurso crítico RC. O RC tem índices de utilização de 62,5% e de eficiência de 80%. Determine a capacidade total teórica (ou disponível) necessária em horas por mês para a produção dos produtos da família FP1 para as seguintes políticas de produção. Considere que cada operador do RC possui 180 horas mensais.
+
+a) Política de acompanhamento da demanda com a produção (lote a lote)   
+b) Política de nivelamento da produção   
+c) Política de nivelamento da produção por blocos bimestrais
+
+--
+
+| Mês | Demanda | Dem. (h) | Cap. Teór. (h) | Pol. a) | Pol. b) | Pol. c) |
+|-----|---------|----------|---------------|---------|---------|---------|
+| Jun | 2000 | 200 | 200 | 320 | 240 | 240 |
+| Jul | 2800 | 280 | 280 | 320 | 240 | 240 |
+| Ago | 3600 | 360 | 360 | 320 | 360 | 360 |
+| Set | 3600 | 360 | 360 | 320 | 360 | 360 |
+| Out | 4000 | 400 | 400 | 320 | 360 | 360 |
+| Nov | 3200 | 320 | 320 | 320 | 360 | 360 |
+
+
+---
+
+## 7. Gestão da Capacidade Produtiva e Grau de Estocabilidade
+
+### Capacidade Produtiva
+
+Gestão da capacidade em operação depende do grau de estocabilidade:
+
+- Alterar a capacidade disponível, ajustando-a às variações da demanda
+- Influenciar a demanda para ajustá-la à capacidade disponível
+
+---
+
+## 7. Gestão da Capacidade Produtiva e Grau de Estocabilidade
+
+### Alternativas para Influenciar a Demanda
+
+**Alternativas para influenciar a demanda:**
+
+- Promoções de preços
+- Mudança temporária de foco
+- Comunicação com o cliente
+- Acesso virtual dos clientes ao serviço
+- Sistema de reservas
+
+---
+
+## 7. Gestão da Capacidade Produtiva e Grau de Estocabilidade
+
+### Gerenciando Capacidade e Receita
+
+**Overbooking:** vender antecipadamente uma capacidade maior do que a realmente disponível na data de prestação do serviço.
+
+**Gestão da receita (Yield Management):** tenta maximizar a receita da venda de serviço tomando decisões a respeito de preços discriminados (diferentes) a serem praticados, possibilidade de realocação de capacidade entre os diversos segmentos da demanda e nível adequado de overbooking.
+
+Exemplo: preço da estadia em um hotel
+
+---
+
+## Bibliografia
+
+**Corrêa, Henrique L.** Administração de produção e operações: manufatura e serviços: uma abordagem estratégica/henrique l. Corrêa, Carlos A. Corrêa. 4ª Ed. São Paulo: Atlas, 2017.
+
+**Graeml, Alexandre R e Peinado, Jurandir.** Administração da produção: operações industriais e de serviços. Curitiba: UnicenP, pages 22–30, 2007.
+
+**Lustosa, Leonardo Junqueira, Mesquita, Marco Aurélio de, e Oliveira, Rodrigo J.** Planejamento e controle da produção. Elsevier Brasil, 2008.
+
+**Martins, Petrônio Garcia e Laugeni, Fernando P.** Administração da produção e operações. São Paulo: Saraiva, 2009.
+
+**Slack, Nigel, Chambers, Stuart, Johnston, Robert, et al.** Administração da produção, volume 2. Atlas São Paulo, 2009.
+
 
 
 
