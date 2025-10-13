@@ -264,42 +264,26 @@ Os graus de utilização e de eficiência considerando que nesta semana foram pr
 > OEE = D × P × Q
 
 
----
-
-
-## 3. Eficácia Global de Equipamento (OEE)
-
-**Exemplo:** Compute o OEE para uma máquina considerando um índice de disponibilidade D=0,8; índice de desempenho P=0,7 e índice de qualidade Q=0,9
-
---
-
-OEE = D × P × Q = 0,8 × 0,7 × 0,9 = 0,504
-
---
-
-### Avaliação do OEE
-
 - OEE < 65%: inaceitável
 - 65% ≤ OEE < 75%: Razoável
 - 75% ≤ OEE < 85%: Aceitável
 - 85% ≤ OEE < 95%: Bom
 - OEE > 95%: Excelente
 
-
 ---
+
 
 ## 3. Eficácia Global de Equipamento (OEE)
 
-### Cálculo do OEE
+### Definições dos Tempos
 
-**Tempo de carregamento:** tempo disponível para produção menos todas as paradas planejadas.
-
-**Tempo operacional total:** tempo operacional total menos as perdas de disponibilidade. Exemplos de perdas de disponibilidades: (i) Tempo com setup e ajustes; (ii) Parada por quebra de equipamento.
-
-**Tempo operacional líquido:** tempo operacional disponível menos o tempo perdido por velocidade menor como, por exemplo, (i) Perdas de treinamento (pessoal novo), (ii) Pessoal com baixo rendimento; (iii) Atrasos relacionados à tecnologia.
-
-**Tempo operacional útil:** Tempo operacional líquido menos perdas de qualidade como, por exemplo, (i) Perdas de retrabalho (ii) Tratamento de reclamações, (iii) produto defeituosa.
-
+.midi[
+**Tempo disponível (ou Tempo calendário):** Total de horas no período (ex: 24h/dia, 168h/semana)   
+**Tempo de carregamento (loading time):** tempo disponível para produção menos todas as paradas planejadas. É o tempo que o equipamento deveria estar produzindo. Também chamado de "tempo operacional disponível" ou "tempo planejado de produção".    
+**Tempo operacional total (operating time):** Tempo de carregamento MENOS as perdas de disponibilidade não planejadas. Exemplos de perdas de disponibilidades: (i) Tempo com setup e ajustes; (ii) Parada por quebra de equipamento.   
+**Tempo operacional líquido (Net Operating Time):** tempo operacional total menos perdas de desempenho/velocidade. Por exemplo, (i) Perdas de treinamento (pessoal novo), (ii) Pessoal com baixo rendimento; (iii) Atrasos relacionados à tecnologia.   
+**Tempo operacional útil (Valuable Operating Time):** Tempo operacional líquido menos perdas de qualidade como, por exemplo, (i) Perdas de retrabalho (ii) Tratamento de reclamações, (iii) produto defeituosa. 
+]
 ---
 
 ## 3. Eficácia Global de Equipamento (OEE)
@@ -315,7 +299,23 @@ OEE = D × P × Q = 0,8 × 0,7 × 0,9 = 0,504
 > OEE = D × P × Q
 
 
+
 ---
+
+
+## 3. Eficácia Global de Equipamento (OEE)
+
+**Exemplo:** Compute o OEE para uma máquina considerando um índice de disponibilidade D=0,8; índice de desempenho P=0,7 e índice de qualidade Q=0,9
+
+--
+
+OEE = D × P × Q = 0,8 × 0,7 × 0,9 = 0,504
+
+
+
+
+---
+
 
 ## 3. Eficácia Global de Equipamento (OEE)
 
@@ -382,7 +382,7 @@ Em um período típico de sete dias, uma máquina particular tem capacidade para
 
 1. Avaliação da capacidade existente
 2. Previsão de necessidades futuras de capacidade
-3. Identificação de diferentes formas de alterar a capacidade a curto, médio e longo prazo
+3. Identificação de diferentes formas de alterar a capacidade nos curto, médio e longo prazos
 4. Identificação de diferentes formas de alterar a demanda
 5. Avaliação econômica, operacional e tecnológica de alternativas de alterar a capacidade
 6. Seleção de alternativas para a obtenção de capacidade adicional
