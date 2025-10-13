@@ -435,9 +435,9 @@ O ponto de equilíbrio pode ser encontrado igualando-se a receita ao custo total
 
 $$R = CT$$
 
-Seja Q* a quantidade de equilíbrio. Assumindo que existe é possível vender uma quantidade Q*, se R = CT, então:
+Seja Q a quantidade de equilíbrio. Assumindo que existe e é possível vender uma quantidade Q*, se R = CT, então:
 
-$$Q* × p = Cf + (Q* × Cu)$$
+$$Q × p = Cf + (Q × Cu)$$
 
 ---
 
@@ -447,10 +447,21 @@ $$Q* × p = Cf + (Q* × Cu)$$
 
 O ponto de equilíbrio pode ser dado por:
 
-$$Q* = Cf / (p - Cu)$$
+$$Q = Cf / (p - Cu)$$
 Em outras palavras, 
 
-Q* = custo fixo / (preço unitário - custo unitário)
+Q = custo fixo / (preço unitário - custo unitário)
+
+---
+
+## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+
+### Cálculo do Ponto de Equilíbrio
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, out.width="50%"}
+knitr::include_graphics("img/pe_capacidade.png")
+```
+
 
 
 ---
@@ -459,7 +470,7 @@ Q* = custo fixo / (preço unitário - custo unitário)
 
 ### Exemplo 1
 
-**Enunciado:** Um restaurante que tem um custo fixo mensal a ser desembolsado no início de cada mês de R\$20.000,00 (e não tem outros custos fixos). Cada refeição tem um custo unitário médio de R\$5,00. Esse valor é constante e independe da quantidade produzida, para a faixa de produção considerada. O preço médio estimado para a venda de cada refeição tem o valor de R$7,00. Determine a quantidade de equilíbrio.
+**Enunciado:** Um restaurante que tem um custo fixo mensal a ser desembolsado no início de cada mês de R$20.000,00 (e não tem outros custos fixos). Cada refeição tem um custo unitário médio de R$5,00. Esse valor é constante e independe da quantidade produzida, para a faixa de produção considerada. O preço médio estimado para a venda de cada refeição tem o valor de R$7,00. Determine a quantidade de equilíbrio.
 
 ---
 
