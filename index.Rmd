@@ -219,7 +219,14 @@ Um centro de trabalho tem 160 horas de trabalho disponível por mês e é capaz 
 
 ## 2. Utilização e Eficiência
 
-### Exercício 2
+
+
+### COM VOCÊS
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+countdown::countdown(10)  # 5 minutes
+```
+
 
 Um centro de trabalho tem 160 horas disponível por mês de trabalho e é capaz de produzir 120 unidades por hora de trabalho. No entanto, no mês anterior ele produziu mercadorias por 130 horas (preparação e ajustes da máquina, reuniões, manutenção de máquina), produzindo um total de 16900 unidades no mês (130 unidades por hora). Qual é a capacidade teórica mensal, a utilização e a eficiência do centro de trabalho?
 
@@ -333,7 +340,14 @@ Determine os índices de disponibilidade (D), de desempenho (P), de qualidade (Q
 
 ## 3. Eficácia Global de Equipamento (OEE)
 
-### Exemplo 2
+
+
+### COM VOCÊS
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+countdown::countdown(10)  # 5 minutes
+```
+
 
 Em um período típico de sete dias, uma máquina particular tem capacidade para trabalhar por 150 horas (tempo de carregamento). O tempo médio com setups e ajustes é de 15 horas e o tempo médio de quebra é de 5 horas a cada sete dias. O tempo de ciclo de produção é igual a 30 minutos (0,5 hora) e durante o período em que a máquina está disponível foram produzidas 234 peças. Subsequentemente, 3% das peças processadas pela máquina mostram algum tipo de defeito. Determine o OEE desta máquina.
 
@@ -395,6 +409,8 @@ Em um período típico de sete dias, uma máquina particular tem capacidade para
 ### Ponto de Equilíbrio
 
 Na análise do ponto de equilíbrio, calcula-se o **nível de produção** a partir do qual a planta ou unidade operação **começa a dar lucro**, ou seja, o ponto a partir do qual a **receita supera os custos** [Lustosa et al., 2008].
+
+> ATENÇÃO: O ponto de equilíbrio tradicional não considera o valor do dinheiro no tempo.
 
 ---
 
@@ -476,7 +492,14 @@ knitr::include_graphics("img/pe_capacidade.png")
 
 ## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
 
-### Exemplo 2
+
+
+### COM VOCÊS
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+countdown::countdown(10)  # 5 minutes
+```
+
 
 **Enunciado:** Um restaurante tem um custo de instalação de R$80.000,00 (e não teria outros custos fixos). Cada refeição terá um custo médio de R$4,00. Esse valor é constante e independe da quantidade produzida, para a faixa de produção considerada. O preço estimado para a venda de cada refeição é também homogêneo e tem o valor de R$8,00. Considere a hipótese de que o restaurante operará com uma taxa de demanda igual à sua capacidade operacional (200 refeições/dia). Determine a partir de quanto tempo o negócio passa a ser lucrativo?
 
@@ -487,12 +510,37 @@ knitr::include_graphics("img/pe_capacidade.png")
 
 ### Método do Ponto de Equilíbrio para Comparação
 
-**Comparação entre custos fixos e variáveis:**
+O **Ponto de Equilíbrio para Comparação** é uma variação da análise clássica, utilizada para comparar diferentes opções ou cenários — por exemplo, escolher entre dois projetos de investimento ou modos de produção distintos.
 
-- É útil quando se tem informação de custos varáveis e fixos
-- Determina as faixas de volume em que cada local é melhor
-- Identificar as interseções que delimitam as faixas de volume para cada local
-- Basta identificar qual é o volume (Q) em que os custos são iguais
+- Analisar e comparar alternativas sob o ponto de vista dos custos e receitas   
+- Identificar o volume de produção/vendas necessário para compensar os custos em cada alternativa   
+- Decidir qual cenário é mais vantajoso em diferentes níveis de atividade
+
+---
+
+## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+
+### Método do Ponto de Equilíbrio para Comparação
+
+1. Identifica os custos fixos e variáveis de cada alternativa a ser comparada
+2. Calcula o ponto de equilíbrio de cada opção — ou o ponto de interseção entre duas alternativas, caso a ideia seja comparar, por exemplo, se vale mais a pena produzir internamente ou terceirizar.
+3. Compara os resultados e avalia, para diferentes volumes, qual cenário se mostra mais vantajoso financeiramente.
+
+> O resultado indica a partir de qual produção/venda uma alternativa será mais econômica que a outra.
+
+
+---
+
+## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+
+### Ponto de Equilíbrio de Indiferença (Comparação entre duas alternativas):
+
+$$CF_A + CV_{uA} × Q = CF_B + CV_{uB} × Q$$
+$$Q_Indiferença = (CF_A - CF_B) / (CV_{uB} - CV_{uA})$$
+$Q$ = Quantidade no ponto de equilíbrio   
+$CF$ = Custo Fixo Total   
+$CV_u$ = Custo Variável Unitário   
+$PV_u$ = Preço de Venda Unitário   
 
 ---
 
@@ -501,6 +549,44 @@ knitr::include_graphics("img/pe_capacidade.png")
 
 ### Método do Ponto de Equilíbrio para Comparação
 
+Imagine que você está decidindo entre produzir uma peça internamente (Alternativa A) ou terceirizar a produção (Alternativa B):
+
+.pull-left[
+1. Alternativa A (Produção interna):   
+  Custo Fixo Total (CFA): R$ 50.000/mês (máquinas, instalações)   
+  Custo Variável Unitário (CVuA): R$ 10/unidade   
+]
+.pull-right[
+2. Alternativa B (Terceirização):   
+  Custo Fixo Total (CFB): R$ 10.000/mês (negociação, administração)   
+  Custo Variável Unitário (CVuB): R$ 20/unidade
+]
+
+---
+
+## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+
+
+### Método do Ponto de Equilíbrio para Comparação
+
+Opção	| Custo Fixo	|Custo Variável Unitário	|Custo Total (exemplo para 5.000 unid)|
+----|-------|-------|-------|
+Produção Interna	|R$ 50.000	|R$ 10	|R$ 50.000 + (5.000 x 10) = R$ 100.000|
+Terceirização	|R$ 10.000	|R$ 20	|R$ 10.000 + (5.000 x 20) = R$ 110.000|
+
+
+---
+
+## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+
+
+### COM VOCÊS
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+countdown::countdown(10)  # 5 minutes
+```
+
+
 **Exemplo:** Serão avaliados os locais A e B para indústria de bebidas. Determine as faixas de volume em que cada local é melhor.
 
 | Custos | Cidade A | Cidade B |
@@ -508,6 +594,16 @@ knitr::include_graphics("img/pe_capacidade.png")
 | Custo fixo mensal | R$1.000 | R$ 2.000 |
 | Custo variável por unidade | R$ 100 | R$ 50 |
 
+---
+
+## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+
+
+### Método do Ponto de Equilíbrio para Comparação
+
+O Método do Ponto de Equilíbrio para Comparação é uma ferramenta poderosa para decidir entre alternativas com estruturas de custos diferentes.
+
+Ele mostra claramente em que ponto uma alternativa passa a ser melhor do que a outra, considerando o volume de operações. Ajuda a fugir de “achismos” e trabalhar com dados claros.
 
 ---
 
@@ -871,3 +967,5 @@ class: center, middle
 .huge[
 **DÚVIDAS?**
 ]
+
+
