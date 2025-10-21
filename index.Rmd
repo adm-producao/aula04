@@ -1215,29 +1215,13 @@ countdown::countdown(10)  # 5 minutes
 |-----|-----|-----|-----|-----|-----|-----|
 | Demanda prevista | 2000 | 2800 | 3600 | 3600 | 4000 | 3200 |
 
-
-Considere também que cada produto da família em análise consuma (tempo-padrão) 3 minutos do recurso crítico RC. O RC tem índices de utilização de 62,5% e de eficiência de 80%. Determine a capacidade total teórica (ou disponível) necessária em horas por mês para a produção dos produtos da família FP1 para as seguintes políticas de produção. Considere que cada operador do RC possui 180 horas mensais.
+Considere também que cada produto da família em análise consuma (tempo-padrão) 3 minutos do recurso crítico RC. O RC tem índices de utilização de 62,5% e de eficiência de 80%. Cada operador do RC possui 180 horas mensais. (i) Determine a capacidade total teórica (ou disponível) necessária em horas por mês para a produção dos produtos da família FP1; e (ii) Calcule o número de funcionários necessários para cada política de produção. 
 
 a) Política de acompanhamento da demanda com a produção (lote a lote)   
 b) Política de nivelamento da produção   
 
 ---
 
-## 6. Plano Agregado de Produção
-
-### Exercício Integrador
-
-| Mês | Demanda | Dem. (h) | Cap. Teór. (h) | Pol. a) | Pol. b) | 
-|-----|---------|----------|---------------|---------|---------|
-| Jun | 2000 | 200 | 200 | 320 | 240 |
-| Jul | 2800 | 280 | 280 | 320 | 240 |
-| Ago | 3600 | 360 | 360 | 320 | 360 | 
-| Set | 3600 | 360 | 360 | 320 | 360 | 
-| Out | 4000 | 400 | 400 | 320 | 360 | 
-| Nov | 3200 | 320 | 320 | 320 | 360 | 
-
-
----
 
 ## 7. Gestão da Capacidade Produtiva e Grau de Estocabilidade
 
